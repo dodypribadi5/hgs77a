@@ -1,7 +1,7 @@
 let tglNow = new Date();
-let waktuBatas = new Date("2025-06-26T23:59:59");
+let waktuBatas = new Date("2025-06-12T23:59:59");
 if (tglNow.getTime() >= waktuBatas.getTime()) {
-  document.location.href = 'https://expiredweb.pages.dev';
+  document.location.href = 'https://suspend-web.pages.dev';
 } else {
   console.log('Server aktif');
 }
